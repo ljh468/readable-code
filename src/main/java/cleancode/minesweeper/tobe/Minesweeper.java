@@ -16,9 +16,12 @@ public class Minesweeper {
     gameBoard = new GameBoard(gameLevel);
   }
 
+  public void initialize() {
+    gameBoard.initializeGame();
+  }
+
   public void run() {
     consoleOutputHandler.showGameStartComments();
-    gameBoard.initializeGame();
 
     while (true) {
       try {
