@@ -4,7 +4,7 @@ import cleancode.minesweeper.tobe.gamelevel.GameLevel;
 import cleancode.minesweeper.tobe.io.ConsoleInputHandler;
 import cleancode.minesweeper.tobe.io.ConsoleOutputHandler;
 
-public class Minesweeper {
+public class Minesweeper implements GameInitializable, GameRunable {
 
   private final GameBoard gameBoard;
   private final ConsoleInputHandler consoleInputHandler = new ConsoleInputHandler();
