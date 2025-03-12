@@ -1,5 +1,6 @@
 package cleancode.minesweeper.tobe.io;
 
+import cleancode.minesweeper.position.CellPosition;
 import cleancode.minesweeper.tobe.GameBoard;
 import cleancode.minesweeper.tobe.GameException;
 
@@ -22,7 +23,8 @@ public class ConsoleOutputHandler implements OutputHandler {
     for (int row = 0; row < board.getRowSize(); row++) {
       System.out.printf("%2d  ", row + 1);
       for (int col = 0; col < board.getColSize(); col++) {
-        System.out.print(board.getSign(row, col) + " ");
+        CellPosition cellPosition = CellPosition.of(row, col);
+        System.out.print(board.getSign(cellPosition) + " ");
       }
       System.out.println();
     }
@@ -49,12 +51,12 @@ public class ConsoleOutputHandler implements OutputHandler {
 
   @Override
   public void showCommentForSelectingCell() {
-    System.out.println("선택한 셀에 대한 행위를 선택하세요. (1: 오픈, 2: 깃발 꽂기)");
+    System.out.println("선택할 좌표를 입력하세요. (예: a1)");
   }
 
   @Override
   public void showCommentForUserAction() {
-    System.out.println("선택할 좌표를 입력하세요. (예: a1)");
+    System.out.println("선택한 셀에 대한 행위를 선택하세요. (1: 오픈, 2: 깃발 꽂기)");
   }
 
   @Override
