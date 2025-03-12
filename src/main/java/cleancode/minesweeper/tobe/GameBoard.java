@@ -1,6 +1,9 @@
 package cleancode.minesweeper.tobe;
 
-import cleancode.minesweeper.tobe.cell.*;
+import cleancode.minesweeper.tobe.cell.Cell;
+import cleancode.minesweeper.tobe.cell.EmptyCell;
+import cleancode.minesweeper.tobe.cell.LandMineCell;
+import cleancode.minesweeper.tobe.cell.NumberCell;
 import cleancode.minesweeper.tobe.gamelevel.GameLevel;
 
 import java.util.Arrays;
@@ -37,7 +40,7 @@ public class GameBoard {
   public boolean isAllCellChecked() {
     return Arrays.stream(board) // Stream<Cell[]>
                  .flatMap(Arrays::stream) // Stream<Stream<Cell>> -> Stream<Cell>
-                 .allMatch(Cell::isChecked); // cell에 sign이 같은지 물어봐야함
+                 .allMatch(Cell::isChecked); // Cell에 sign이 같은지 물어봐야함
   }
 
   public void initializeGame() {
